@@ -42,11 +42,19 @@ contains only the required jars instead of all the Google Eclipse plugin adds in
 
 ## The hard work
 What exactly does the plugin?
+
 * setups the Gaelyk and GAE plugins as described in their wikis
+
 * fixes `.project` and `.classpath` files to follow ones distributed with Gaelyk Template Project
+
 * add testRuntime dependencies to the classpath
+
 * include jars in lib dir into the classpath
+
 * helps managing the lib dir to contain only jars which could not be fetched from dependencies (useful for VCS)
+
 * add two methods to the build file
+
     * `gitHub()` to add url resolver from the GitHub (in format which can be seen above)
+    
     * `gaelykMinimal()` which supplies the minimal dependencies to run Gaelyk (except Groovy). You can specify Gaelyk version by passing `gaelykVersion` parameter as well as the GAE version by passing `gaeVersion` parameter.
