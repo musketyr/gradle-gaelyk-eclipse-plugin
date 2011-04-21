@@ -47,13 +47,15 @@ What exactly does the plugin?
 
 * fixes `.project` and `.classpath` files to follow ones distributed with Gaelyk Template Project
 
-* add testRuntime dependencies to the classpath
+* adds `testRuntime` dependencies to the classpath
 
-* include jars in lib dir into the classpath
+* maps test folder to `test`
+
+* includes jars in lib dir into the classpath
 
 * helps managing the lib dir to contain only jars which could not be fetched from dependencies (useful for VCS)
 
-* add two methods to the build file
+* adds two methods to the build file
 
     * `gitHub()` to add url resolver from the GitHub (in format which can be seen above)
     
