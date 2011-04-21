@@ -1,0 +1,28 @@
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+
+version = '0.1'
+
+
+repositories {
+    mavenCentral()
+	add(new org.apache.ivy.plugins.resolver.URLResolver()) {
+		name = "BMuschko"
+		addArtifactPattern 'http://cloud.github.com/downloads/bmuschko/[module]/[module]-[revision].[ext]'
+	}
+    add(new org.apache.ivy.plugins.resolver.URLResolver()) {
+        name = "GLaForge"
+    	addArtifactPattern 'http://cloud.github.com/downloads/glaforge/[organisation]/[module]-[revision].[ext]'
+    }
+}
+
+dependencies {
+	groovy 	"org.codehaus.groovy:groovy-all:1.7.10"
+    runtime "com.google.appengine:appengine-tools-sdk:1.4.3"
+	runtime ":gradle-gae-plugin:0.4"
+	runtime ":gradle-gaelyk-plugin:0.1"
+	compile gradleApi()
+	testCompile "org.spockframework:spock-core:0.5-groovy-1.7"
+	testCompile "junit:junit:4.8.2"
+}
+
