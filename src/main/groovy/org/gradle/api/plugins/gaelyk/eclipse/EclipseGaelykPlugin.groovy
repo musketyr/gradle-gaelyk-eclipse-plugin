@@ -49,7 +49,25 @@ class EclipseGaelykPlugin implements Plugin<Project>{
 		
 		project.cleanEclipseClasspath.dependsOn('cleanGaelykEclipseLibs')
 		
-
+		project.sourceSets {
+			main {
+				groovy {
+					srcDirs = ["src"]
+				}
+			}
+			test {
+				groovy {
+					srcDirs = ["test"]
+				}
+			}
+		}
+		
+		project.gae {
+			warDir = new File("war")
+		}
+		
+		
+		project.webAppDirName = new File("war")
 		
 	}
 	
@@ -65,7 +83,7 @@ class EclipseGaelykPlugin implements Plugin<Project>{
 					.appendNode("attribute", [name: "org.eclipse.jst.component.nondependency", value: "/war/WEB-INF/lib"])
 				xml.asNode().appendNode("classpathentry", [kind:"src", output:"war/WEB-INF/classes", path:"war/WEB-INF/groovy"])
 				xml.asNode().classpathentry.findAll{ it.@path =~ sdkJars.collect{ java.util.regex.Pattern.quote(it)}.join("|")}*.replaceNode {}
-				fileTree(dir: 'war/WEB-INF/lib', includes: ['*.jar'], excludes: configurations.runtime.collect{ it.name } + sdkJars.collect{ "${it}-*.jar"}).each{
+				project.fileTree(dir: 'war/WEB-INF/lib', includes: ['*.jar'], excludes: project.configurations.runtime.collect{ it.name } + sdkJars.collect{ "${it}-*.jar"}).each{
 					xml.asNode().appendNode("classpathentry", [kind:"lib", path: (it.path - rootDir)[1..-1]])
 				}
 			}

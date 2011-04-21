@@ -3,8 +3,10 @@ package org.gradle.api.plugins.gaelyk.eclipse
 import org.gradle.api.Project;
 import org.gradle.testfixtures.ProjectBuilder;
 
+import spock.lang.Ignore;
 import spock.lang.Specification;
 
+@Ignore
 class EclipseGaelykPluginSpec extends Specification {
 	
 	def plugin = new EclipseGaelykPlugin()
@@ -19,6 +21,11 @@ class EclipseGaelykPluginSpec extends Specification {
 		project.eclipseClasspath
 		project.gaeRun
 		project.gaelykInstallPlugin
+	}
+	
+	def "Clean eclipse works"(){
+		expect:
+		project.gaelykEclipseLibs.copyAction.execute()
 	}
 
 }

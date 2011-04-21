@@ -33,7 +33,7 @@
 	<classpathentry exported="true" kind="lib" path="/home/ladin/.gradle/cache/com.google.appengine/appengine-tools-sdk/jars/appengine-tools-sdk-1.4.3.jar"/>
 	<classpathentry exported="true" kind="lib" path="/usr/lib/gradle-1.0-milestone-2/lib/gradle-tooling-api-1.0-milestone-2.jar"/>
 	<classpathentry exported="true" kind="lib" path="/home/ladin/.gradle/cache/org.spockframework/spock-core/jars/spock-core-0.5-groovy-1.7.jar" sourcepath="/home/ladin/.gradle/cache/org.spockframework/spock-core/sources/spock-core-0.5-groovy-1.7-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="/usr/lib/gradle-1.0-milestone-2/lib/gradle-core-1.0-milestone-2.jar"/>
+	<classpathentry exported="true" kind="lib" path="/usr/lib/gradle-1.0-milestone-2/lib/gradle-core-1.0-milestone-2.jar" sourcepath="/usr/lib/gradle-1.0-milestone-2/src"/>
 	<classpathentry exported="true" kind="lib" path="/usr/lib/gradle-1.0-milestone-2/lib/plugins/gradle-jetty-1.0-milestone-2.jar"/>
 	<classpathentry exported="true" kind="lib" path="/home/ladin/.gradle/cache/gradle-gaelyk-plugin/jars/gradle-gaelyk-plugin-0.1.jar" sourcepath="/home/ladin/.gradle/cache/gradle-gaelyk-plugin/sources/gradle-gaelyk-plugin-0.1-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="/usr/lib/gradle-1.0-milestone-2/lib/plugins/gradle-code-quality-1.0-milestone-2.jar"/>
