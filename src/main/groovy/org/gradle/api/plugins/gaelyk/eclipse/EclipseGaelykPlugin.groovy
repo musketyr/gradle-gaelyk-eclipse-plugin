@@ -22,6 +22,8 @@ class EclipseGaelykPlugin implements Plugin<Project>{
 	]
 	
 	void apply(project) {
+		project.convention.plugins.gaelykEclipse = new EclipseGaelykPluginConvention()
+		
 		project.apply plugin: 'groovy'
 		project.apply plugin: 'gae'
 		project.apply plugin: 'gaelyk'
