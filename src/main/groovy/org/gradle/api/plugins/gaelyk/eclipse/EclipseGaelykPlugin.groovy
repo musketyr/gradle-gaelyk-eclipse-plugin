@@ -86,7 +86,7 @@ class EclipseGaelykPlugin implements Plugin<Project>{
 				xml.asNode().appendNode("classpathentry", [kind:"src", output:"war/WEB-INF/classes", path:"war/WEB-INF/groovy"])
 				xml.asNode().classpathentry.findAll{ it.@path =~ sdkJars.collect{ java.util.regex.Pattern.quote(it)}.join("|")}*.replaceNode {}
 				project.fileTree(dir: 'war/WEB-INF/lib', includes: ['*.jar'], excludes: project.configurations.runtime.collect{ it.name } + sdkJars.collect{ "${it}-*.jar"}).each{
-					xml.asNode().appendNode("classpathentry", [kind:"lib", path: (it.path - rootDir)[1..-1]])
+					xml.asNode().appendNode("classpathentry", [kind:"lib", path: (it.path - project.rootDir)[1..-1]])
 				}
 			}
 		}

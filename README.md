@@ -59,6 +59,8 @@ What exactly does the plugin?
 
 ## Release notes
 
+* 0.1.2 - Fixed eclipse classpath setup task (rootDir not referenced from the project object)
+
 * 0.1.1 - Removed libs cleaning task until its working more reliably
 
 * 0.1 - Initial version
