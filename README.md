@@ -37,8 +37,6 @@ To use the Gaelyk Eclipse plugin, set up the minimal build file:
 
 Use standard `cleanEclipse eclipse` tasks to setup the Eclipse project.
 
-Run `cleanGaelykEclipseLibs gaelykEclipseLibs` to ensure the lib directory
-contains only the required jars instead of all the Google Eclipse plugin adds in.
 
 ## The hard work
 What exactly does the plugin?
@@ -53,10 +51,14 @@ What exactly does the plugin?
 
 * includes jars in lib dir into the classpath
 
-* helps managing the lib dir to contain only jars which could not be fetched from dependencies (useful for VCS)
-
 * adds two methods to the build file
 
     * `gitHub()` to add url resolver from the GitHub (in format which can be seen above)
     
     * `gaelykMinimal()` which supplies the minimal dependencies to run Gaelyk (except Groovy). You can specify Gaelyk version by passing `gaelykVersion` parameter as well as the GAE version by passing `gaeVersion` parameter.
+
+## Release notes
+
+* 0.1.1 - Removed libs cleaning task until its working more reliably
+
+* 0.1 - Initial version

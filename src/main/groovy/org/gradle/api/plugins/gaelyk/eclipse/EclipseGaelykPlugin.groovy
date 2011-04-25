@@ -40,16 +40,16 @@ class EclipseGaelykPlugin implements Plugin<Project>{
 		 }
 		 
 		 
-		project.task('cleanGaelykEclipseLibs', type: Delete){
-			group = "Gaelyk"
-			description = "Deletes all jars from 'war/WEB-INF/lib' which are not part of runtime configuration."
-			delete(project.fileTree(dir: 'war/WEB-INF/lib', includes: ['*.jar'], excludes: project.configurations.runtime.collect{ it.name } + sdkJars.collect{ "${it}-*.jar"}))
-		}
+//		project.task('cleanGaelykEclipseLibs', type: Delete){
+//			group = "Gaelyk"
+//			description = "Deletes all jars from 'war/WEB-INF/lib' which are not part of runtime configuration."
+//			delete(project.fileTree(dir: 'war/WEB-INF/lib', includes: ['*.jar'], excludes: project.configurations.runtime.collect{ it.name } + sdkJars.collect{ "${it}-*.jar"}))
+//		}
 		
 		project.gaeRun.dependsOn('gaelykEclipseLibs')
 		project.eclipseClasspath.dependsOn('gaelykEclipseLibs')
 		
-		project.cleanEclipseClasspath.dependsOn('cleanGaelykEclipseLibs')
+//		project.cleanEclipseClasspath.dependsOn('cleanGaelykEclipseLibs')
 		
 		project.sourceSets {
 			main {
