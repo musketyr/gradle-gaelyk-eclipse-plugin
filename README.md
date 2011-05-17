@@ -31,7 +31,7 @@ To use the Gaelyk Eclipse plugin, set up the minimal build file:
 	
 	
 	dependencies {
-		groovy 	"org.codehaus.groovy:groovy-all:1.7.10"
+		groovy 	"org.codehaus.groovy:groovy-all:1.8.0"
 		compile gaelykMinimal()
 	}
 
@@ -58,6 +58,8 @@ What exactly does the plugin?
     * `gaelykMinimal()` which supplies the minimal dependencies to run Gaelyk (except Groovy). You can specify Gaelyk version by passing `gaelykVersion` parameter as well as the GAE version by passing `gaeVersion` parameter.
 
 ## Release notes
+
+* 0.1.3 - Updated `gaelykMinimal()` defaults to work with Gaelyk 0.7 release
 
 * 0.1.2 - Fixed eclipse classpath setup task (rootDir not referenced from the project object)
 
