@@ -13,9 +13,9 @@ class EclipseGaelykPluginConvention {
 	}
 	
 	def gaelykMinimal(conf = [:]){
-		def gaelyk = new DefaultClientModule('glaforge','gaelyk',conf.gaelykVersion ?: '0.6.1')
-		gaelyk.addDependency new DefaultClientModule('com.google.appengine','appengine-api-1.0-sdk', conf.gaeVersion ?: '1.4.3')
-		gaelyk.addDependency new DefaultClientModule('com.google.appengine','appengine-api-labs',conf.gaeVersion ?: '1.4.3')
+		def gaelyk = new DefaultClientModule('glaforge','gaelyk',conf.gaelykVersion ?: '0.7')
+		gaelyk.addDependency new DefaultClientModule('com.google.appengine','appengine-api-1.0-sdk', conf.gaeVersion ?: '1.5.0')
+		gaelyk.addDependency new DefaultClientModule('com.google.appengine','appengine-api-labs',conf.gaeVersion ?: '1.5.0')
 		gaelyk
 	}
 	
